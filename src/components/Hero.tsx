@@ -13,7 +13,7 @@ const Hero = () => {
     if (targetElement) {
       const header = document.querySelector('header');
       const headerHeight = header ? header.offsetHeight : 80;
-      const offset = 20; // Consistent offset
+      const offset = 20;
       const targetPosition = targetElement.offsetTop - headerHeight - offset;
       
       window.scrollTo({
@@ -26,15 +26,14 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="h-screen flex items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
       ref={ref}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8 }}
-      style={{ willChange: 'auto' }}
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-100" style={{ willChange: 'auto' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-100"></div>
       
       {/* Main Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -105,7 +104,7 @@ const Hero = () => {
             transition={{ duration: 1, delay: 0.5 }}
           >
             <motion.h1 
-              className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -114,7 +113,7 @@ const Hero = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-sm md:text-xl lg:text-2xl text-gray-600 mb-3 md:mb-4"
+              className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-3 md:mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 1 }}
@@ -123,7 +122,7 @@ const Hero = () => {
             </motion.p>
             
             <motion.p 
-              className="text-sm md:text-lg text-gray-500 mb-8 md:mb-12 max-w-2xl lg:max-w-none"
+              className="text-sm sm:text-base md:text-lg text-gray-500 mb-8 md:mb-12 max-w-2xl lg:max-w-none"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: 1.2 }}
@@ -143,7 +142,7 @@ const Hero = () => {
                   e.preventDefault();
                   handleNavClick('contact');
                 }}
-                className="group relative bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center min-w-[160px] md:min-w-[180px] min-h-[48px] overflow-hidden cursor-pointer active:scale-95"
+                className="group relative bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white text-sm sm:text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center min-w-[160px] md:min-w-[180px] min-h-[48px] overflow-hidden cursor-pointer active:scale-95"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -157,7 +156,7 @@ const Hero = () => {
                   e.preventDefault();
                   handleNavClick('about');
                 }}
-                className="group relative border-2 border-purple-500 text-purple-600 hover:text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 hover:shadow-lg flex items-center justify-center min-w-[160px] md:min-w-[180px] min-h-[48px] overflow-hidden cursor-pointer active:scale-95"
+                className="group relative border-2 border-purple-500 text-purple-600 hover:text-white text-sm sm:text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 hover:shadow-lg flex items-center justify-center min-w-[160px] md:min-w-[180px] min-h-[48px] overflow-hidden cursor-pointer active:scale-95"
                 whileHover={{ scale: 1.02, y: -1 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -172,7 +171,7 @@ const Hero = () => {
                   link.download = 'Suhana_Gomber_Resume.pdf';
                   link.click();
                 }}
-                className="group relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 md:gap-3 min-w-[180px] md:min-w-[200px] min-h-[48px] overflow-hidden active:scale-95"
+                className="group relative bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white text-sm sm:text-base md:text-lg font-semibold px-6 md:px-10 py-3 md:py-4 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 md:gap-3 min-w-[180px] md:min-w-[200px] min-h-[48px] overflow-hidden active:scale-95"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

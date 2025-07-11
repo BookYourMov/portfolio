@@ -2,100 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling for the entire page */
+/* Enhanced smooth scrolling */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* Account for fixed header */
-  /* Prevent bounce scroll on iOS */
+  scroll-padding-top: 100px;
   overflow-x: hidden;
-  /* Hardware acceleration */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: scroll-position;
 }
 
-/* Enhanced smooth scrolling with performance optimization */
-html, body {
-  scroll-behavior: smooth;
-  /* Prevent scroll stuttering */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Optimize all elements for smooth scrolling */
-* {
-  scroll-behavior: smooth;
-  /* Prevent layout thrashing during scroll */
-  box-sizing: border-box;
-}
-
-/* Mobile-specific improvements */
-* {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-}
-
-/* Prevent horizontal scroll on mobile */
 body {
   overflow-x: hidden;
-  /* Enhanced scroll performance on mobile */
-  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  /* Prevent scroll stuttering */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  position: relative;
 }
 
-/* Optimize sections for smooth scrolling */
-section {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  position: relative;
-}
-
-/* Better scroll snap behavior */
-main {
-  scroll-snap-type: y proximity;
-}
-
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
-}
-
-/* Better touch targets for mobile */
+/* Mobile optimizations */
 @media (max-width: 768px) {
-  button, a, [role="button"] {
-    min-height: 44px;
-    min-width: 44px;
-  }
-  
-  /* Fix viewport issues on mobile browsers */
   html {
-    height: -webkit-fill-available;
-    scroll-padding-top: 80px; /* Smaller padding for mobile */
-  }
-  
-  body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
+    scroll-padding-top: 80px;
   }
   
   /* Prevent zoom on input focus on iOS */
   input, textarea, select {
     font-size: 16px;
-  }
-  
-  /* Ensure smooth scrolling on mobile */
-  html, body {
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
   }
 }
 
@@ -136,16 +63,5 @@ section {
   
   .hover-scale:active {
     transform: scale(0.95);
-  }
-}
-
-/* Improved section spacing for better scroll experience */
-section {
-  scroll-margin-top: 100px;
-}
-
-@media (max-width: 768px) {
-  section {
-    scroll-margin-top: 80px;
   }
 }

@@ -1,8 +1,6 @@
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Account for fixed header */
-  /* Improve scroll performance */
-  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 100px;
   overflow-x: hidden;
 }
 
@@ -12,46 +10,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Enhanced scroll performance */
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
   overflow-x: hidden;
-  /* Prevent scroll stuttering */
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  scroll-behavior: smooth;
 }
 
 /* Optimize scroll performance */
 html, body {
   scroll-behavior: smooth;
-  /* Hardware acceleration for smooth scrolling */
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  will-change: scroll-position;
-}
-
-/* Prevent scroll stuttering on sections */
-section {
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-/* Optimize animations for better scroll performance */
-* {
-  scroll-behavior: smooth;
-}
-
-/* Better scroll snap for sections */
-main {
-  scroll-snap-type: y proximity;
-}
-
-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
 }
 
 .parallax-bg {
