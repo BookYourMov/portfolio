@@ -5,21 +5,30 @@
 /* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Account for fixed header */
+  scroll-padding-top: 120px; /* Account for fixed header */
   /* Prevent bounce scroll on iOS */
   overflow-x: hidden;
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: scroll-position;
 }
 
-/* Enhanced smooth scrolling */
+/* Enhanced smooth scrolling with performance optimization */
+html, body {
+  scroll-behavior: smooth;
+  /* Prevent scroll stuttering */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Optimize all elements for smooth scrolling */
 * {
   scroll-behavior: smooth;
-}
-
-/* Better scroll performance */
-@supports (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: smooth;
-  }
+  /* Prevent layout thrashing during scroll */
+  box-sizing: border-box;
 }
 
 /* Mobile-specific improvements */
@@ -31,9 +40,33 @@ html {
 /* Prevent horizontal scroll on mobile */
 body {
   overflow-x: hidden;
-  /* Improve scroll performance on mobile */
+  /* Enhanced scroll performance on mobile */
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
+  /* Prevent scroll stuttering */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  position: relative;
+}
+
+/* Optimize sections for smooth scrolling */
+section {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+}
+
+/* Better scroll snap behavior */
+main {
+  scroll-snap-type: y proximity;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 /* Better touch targets for mobile */

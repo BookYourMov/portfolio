@@ -26,18 +26,19 @@ const Hero = () => {
   return (
     <motion.section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      className="h-screen flex items-center justify-center relative overflow-hidden"
       ref={ref}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.8 }}
+      style={{ willChange: 'auto' }}
     >
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-100"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-pink-100 to-rose-100" style={{ willChange: 'auto' }}></div>
       
       {/* Main Content Container */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center min-h-screen py-20 md:py-24">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center h-full py-12 md:py-16">
           
           {/* Left Side - Image */}
           <motion.div 

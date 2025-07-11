@@ -59,17 +59,19 @@ const Header = () => {
       // Close mobile menu first if open
       setIsMenuOpen(false);
       
-      // Improved smooth scrolling with better timing
+      // Enhanced smooth scrolling with performance optimization
       setTimeout(() => {
         const header = document.querySelector('header');
         const headerHeight = header ? header.offsetHeight : 80;
-        const offset = 20; // Consistent offset for all sections
+        const offset = targetId === 'hero' ? 0 : 30; // No offset for hero, consistent for others
         const targetPosition = targetElement.offsetTop - headerHeight - offset;
         
-        // Use smooth scrolling with better performance
+        // Optimized smooth scrolling
         window.scrollTo({
           top: Math.max(0, targetPosition),
-          behavior: 'smooth'
+          behavior: 'smooth',
+          // @ts-ignore - For better browser support
+          block: 'start'
         });
       }, isMenuOpen ? 150 : 0); // Delay only if menu was open
     } else {
@@ -79,9 +81,9 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 transform translateZ(0) ${
       isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm' : 'bg-white/70 backdrop-blur-sm'
-    }`}>
+    }`} style={{ willChange: 'background-color, backdrop-filter' }}>
       <div className="container mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between">
         <div className="text-lg md:text-2xl font-bold text-gray-800 truncate">
           Suhana Gomber
