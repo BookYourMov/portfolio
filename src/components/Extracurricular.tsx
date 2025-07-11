@@ -53,9 +53,9 @@ const Extracurricular = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Community Impact</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 gradient-text">Community Impact</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 mt-4 md:mt-6 max-w-2xl mx-auto text-sm md:text-base">
             Committed to making a positive difference through leadership and volunteer work
           </p>
         </motion.div>
@@ -64,31 +64,31 @@ const Extracurricular = () => {
           {activities.map((activity, index) => (
             <motion.div 
               key={index} 
-              className="bg-white/70 rounded-2xl p-8 hover:bg-white transition-all duration-300 hover-scale shadow-sm"
+              className="bg-white/70 rounded-2xl p-4 md:p-6 lg:p-8 hover:bg-white transition-all duration-300 hover-scale shadow-sm"
               initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.9 }}
               animate={isInView ? { opacity: 1, x: 0, scale: 1 } : { opacity: 0, x: index % 2 === 0 ? -100 : 100, scale: 0.9 }}
               transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
             >
-              <div className="grid md:grid-cols-12 gap-6">
+              <div className="grid md:grid-cols-12 gap-4 md:gap-6">
                 <div className="md:col-span-3 text-center md:text-left">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white mb-4">
                     {activity.icon}
                   </div>
-                  <div className="flex items-center justify-center md:justify-start space-x-2 text-purple-600 font-semibold">
+                  <div className="flex items-center justify-center md:justify-start space-x-2 text-purple-600 font-semibold text-sm md:text-base">
                     <Calendar className="w-4 h-4" />
                     <span>{activity.period}</span>
                   </div>
                 </div>
                 
                 <div className="md:col-span-9">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-800">{activity.title}</h3>
-                  <div className="text-purple-600 font-semibold mb-1">{activity.organization}</div>
-                  <div className="text-gray-500 mb-4">{activity.location}</div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 text-gray-800">{activity.title}</h3>
+                  <div className="text-purple-600 font-semibold mb-1 text-sm md:text-base">{activity.organization}</div>
+                  <div className="text-gray-500 mb-3 md:mb-4 text-sm md:text-base">{activity.location}</div>
                   
-                  <p className="text-gray-600 mb-4 leading-relaxed">{activity.description}</p>
+                  <p className="text-gray-600 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">{activity.description}</p>
                   
                   <div className="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
-                    <p className="text-purple-700 italic">{activity.impact}</p>
+                    <p className="text-purple-700 italic text-sm md:text-base">{activity.impact}</p>
                   </div>
                 </div>
               </div>

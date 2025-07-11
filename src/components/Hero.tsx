@@ -11,27 +11,21 @@ const Hero = () => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      // Use requestAnimationFrame to ensure the scroll happens after any layout changes
-      requestAnimationFrame(() => {
-        // Get the actual header height dynamically
-        const header = document.querySelector('header');
-        const headerHeight = header ? header.offsetHeight : 80;
-        
-        // Account for section padding - sections have py-20 (80px top padding)
-        // So we reduce the additional offset since sections already have padding
-        const additionalOffset = 10;
-        const targetPosition = targetElement.offsetTop - headerHeight - additionalOffset;
-        
-        window.scrollTo({
-          top: Math.max(0, targetPosition), // Ensure we don't scroll to negative values
-          behavior: 'smooth'
-        });
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 80;
+      const offset = 20; // Consistent offset
+      const targetPosition = targetElement.offsetTop - headerHeight - offset;
+      
+      window.scrollTo({
+        top: Math.max(0, targetPosition),
+        behavior: 'smooth'
       });
     }
   };
 
   return (
-    <motion.section 
+    <motion.section
+      id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
       ref={ref}
       initial={{ opacity: 0 }}

@@ -62,9 +62,9 @@ const Gallery = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Gallery</h2>
+          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 gradient-text">Gallery</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-          <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
+          <p className="text-gray-600 mt-4 md:mt-6 max-w-2xl mx-auto text-sm md:text-base">
             Moments from my professional journey and volunteer experiences
           </p>
         </motion.div>
@@ -87,12 +87,12 @@ const Gallery = () => {
               </div>
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
                   <div className="flex items-center space-x-2 mb-2">
                     <div className="text-purple-400">{item.icon}</div>
-                    <span className="text-purple-300 text-sm font-semibold">{item.category}</span>
+                    <span className="text-purple-300 text-xs md:text-sm font-semibold">{item.category}</span>
                   </div>
-                  <h3 className="text-white text-lg font-bold">{item.title}</h3>
+                  <h3 className="text-white text-sm md:text-lg font-bold">{item.title}</h3>
                 </div>
               </div>
             </motion.div>
@@ -105,9 +105,9 @@ const Gallery = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6, delay: 1 }}
         >
-          <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-6 py-3">
+          <div className="inline-flex items-center space-x-2 bg-purple-100 rounded-full px-4 md:px-6 py-2 md:py-3">
             <Camera className="w-5 h-5 text-purple-600" />
-            <span className="text-purple-700 font-semibold">Capturing meaningful moments</span>
+            <span className="text-purple-700 font-semibold text-sm md:text-base">Capturing meaningful moments</span>
           </div>
         </motion.div>
       </div>

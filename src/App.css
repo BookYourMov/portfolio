@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed header */
 }
 
 body {
@@ -8,6 +9,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Improve scroll performance */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Enhanced smooth scrolling for all browsers */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Smooth scroll with better performance */
+@supports (scroll-behavior: smooth) {
+  html, body {
+    scroll-behavior: smooth;
+  }
 }
 
 .parallax-bg {
